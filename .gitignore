@@ -18,3 +18,7 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+/.settings
+/libs/android-support-v4.jar
+/libs/bcprov-jdk15-143.jar
+/libs/jheader-0.1.jar
