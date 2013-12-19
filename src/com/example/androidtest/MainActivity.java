@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class MainActivity extends Activity {
 
@@ -32,29 +33,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
 		mOutPutView = (TextView) findViewById(R.id.textView1);
-		
-//		SharedPreferences sp = getSharedPreferences("defaultSp", MODE_PRIVATE);
-//		Set<String> set = new HashSet<String>();
-//		sp.edit().putStringSet("", null);
-		
-//		String[] testArr = { "b", "a", "c", "dba", "fkdsl", "kfdsj", "fsfjsdlflsjf"};
-//		Set<String> set = new LinkedHashSet<String>();
-//		set.addAll(Arrays.asList(testArr));
-//		Object[] arr2 = set.toArray();
-//		for (Object obj:arr2) {
-//			Log.d(TAG, "arr2=" + obj);
-//		}
-//		HandlerThread thread = new HandlerThread("backthread");
-//		thread.start();
-//		mMyserver = new MyServer(MainActivity.this, thread.getLooper());
-//		
-//		
+
 		findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
 //			private boolean visible = true;
-
-			@Override
+//			@Override
 			public void onClick(View v) {
 				//TextView tv = (TextView) v;
 				
@@ -69,44 +52,81 @@ public class MainActivity extends Activity {
 //				visible = !visible;
 //				setSystemBarVisible(MainActivity.this, visible);
 //				scanMedia();
-				studyExif();
+//				studyExif();
+//				new RepairPhotoTime().debug();
+//				studyM3U8();
+//				studyMemListViewActivity();
+//				studySnTarge();
+//				studyExecute();
+//				studyOpenInLine();
+				studySleepInMainThread();
 			}
+
 		});
-		
-//		findViewById(R.id.editText1).setActivated(true);
-		
-//		Intent intent = new Intent();
-//		Log.d(TAG, "new Intent(): " + intent.toUri(Intent.URI_INTENT_SCHEME));
-//		intent.setClass(this, KeyStoreManager.class);
-//		Log.d(TAG, "setClass: " + intent.toUri(Intent.URI_INTENT_SCHEME));
-//		intent.setData(Uri.parse("http://www.baidu.com"));
-//		Log.d(TAG, "setData: " + intent.toUri(Intent.URI_INTENT_SCHEME));
-//		try {
-//			Intent intent2 = Intent.parseUri(intent.toUri(Intent.URI_INTENT_SCHEME), Intent.URI_INTENT_SCHEME);
-//			Log.d(TAG, "intent2: " + intent2.toUri(Intent.URI_INTENT_SCHEME));
-//			Log.d(TAG, "parseUri: " + "intent==intent?" + intent.equals(intent2));
-//		} catch (URISyntaxException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-//		View v = LayoutInflater.from(this).inflate(R.layout.dialog_test, null);
-//		AlertDialog dlg = new AlertDialog.Builder(this)
-//		.setView(v).create();
-//		dlg.show();
-//		dlg.getWindow().setLayout(500, 500);
-		
-//		LayoutParams p = dlg.getWindow().getAttributes();
-//		p.width = 1920;
-//		p.height = 720;
+	}
+	
+	private void studySleepInMainThread() {
+		mOutPutView.setText("main thread will sleep\n");
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		mOutPutView.append("main thread woke up");
+	}
+	
+	
+	private void studyOpenInLine() {
+		new OpenInLineDlg(this).show();
+	}
+	
+	private void studyExecute() {
+		Runtime rt = Runtime.getRuntime();
+		String commad[] = {"/system/bin/testExce"};
+		Process pcs;
+		try {
+			pcs = rt.exec(commad);
+			int exitValue = pcs.waitFor();
+			Log.i(TAG, "testExce exit code: " + exitValue);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+	
+	private void studySnTarge() {
+		Log.d(TAG, "in studySnTarge");
+		DeviceSecret dc = new DeviceSecret();
+		Log.d(TAG, "getDeviceSerialNumber()=" + dc.getDeviceSerialNumber());
+		Log.d(TAG, "getSystemVersion()=" + dc.getSystemVersion());
+		Log.d(TAG, "getCustomId()=" + dc.getCustomId());
+		try {
+			boolean result = dc.burnSerialNumber();
+			Log.d(TAG, "burnSerialNumber result=" + result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	protected void studyMemListViewActivity() {
+		startActivity(new Intent(this, MemListViewActivity.class));
 	}
+
+//	protected void studyM3U8() {
+//		VideoView videoView = (VideoView) findViewById(R.id.videoView1);
+//		videoView.setVideoPath("http://192.168.1.7:8080/data/tvonline/2013-08-08/btv1_201308080214_201308080303.m3u8");
+////		videoView.setVideoPath("http://web-play.pptv.com/web-m3u8-300146.m3u8");
+////		videoView.setVideoPath("http://vod.cntv.lxdns.com/flash/live_back/nettv_btv1/btv1-2013-08-08-02-003.mp4");
+//		videoView.start();
+//	}
+
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.main, menu);
+//		return true;
+//	}
 	
 	public static void setSystemBarVisible(final Activity context,boolean visible) {
     	Log.d(TAG, "in setSystemBarVisible, set visiable to " + visible);
@@ -155,7 +175,7 @@ public class MainActivity extends Activity {
 		Arrays.fill(mimeTypes, "image/jpeg");
 		
 		MediaScannerConnection.scanFile(MainActivity.this, paths, mimeTypes, new MediaScannerConnection.OnScanCompletedListener() {
-			@Override
+//			@Override
 			public void onScanCompleted(String path, Uri uri) {
 				Log.d(TAG, "in onScanCompleted: path=" + path + " uri=" + uri);
 			}

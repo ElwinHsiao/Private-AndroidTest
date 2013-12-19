@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_root"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@drawable/background1"
+    android:orientation="horizontal" 
+    android:paddingLeft="5dp">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="bottom"
+        android1:textSize="18sp"
+        android:text="城市:" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android1:layout_alignBottom="@id/textView1"
+        android:layout_toRightOf="@id/textView1"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="none"
+        android:includeFontPadding="false"
+        android:text="ShenZhen" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android1:textSize="18sp"
+        android:text="单位:" />
+
+    <RadioGroup
+        android1:id="@+id/radioGroup1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_toRightOf="@id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:gravity="bottom"
+        android1:layout_centerVertical="true" >
+
+        <RadioButton
+            android1:id="@+id/radio0"
+            android1:layout_width="wrap_content"
+            android1:layout_height="match_parent"
+            android1:checked="true"
+            android:gravity="bottom"
+            android1:text="℃" />
+
+        <RadioButton
+            android1:id="@+id/radio1"
+            android:layout_marginLeft="20dp"
+            android1:layout_width="wrap_content"
+            android1:layout_height="match_parent"
+            android:gravity="bottom"
+            android1:text="℉" />
+
+    </RadioGroup>
+
+</RelativeLayout>

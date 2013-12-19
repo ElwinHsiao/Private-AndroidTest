@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/edit_weather"
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="@string/hint"
+        android:layout_gravity="center_vertical"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/btn_units"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+		android:layout_marginRight="10dp"
+        android:background="@drawable/bg_units"
+        android:text="@string/units_c"
+        android:textColor="#000000"
+        android:textSize="35dp"
+        android:typeface="serif" />
+
+</LinearLayout>

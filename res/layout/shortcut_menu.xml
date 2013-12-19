@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="horizontal" 
+    android:gravity="center"
+    android:id="@+id/content_root"
+    android:background="@drawable/background1"
+    >
+<!--     android:divider="#ff0000"
+    android:showDividers="middle"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:dividerPadding="10dp" -->
+
+    <ImageButton
+        android:id="@+id/button1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="wallpaper" 
+        android:scaleType="fitCenter"
+        android:src="@drawable/set_1"/>
+
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:text="Weather"
+        android:scaleType="fitCenter"
+        android:src="@drawable/set_2" />
+
+    <ImageButton
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:text="On boot" 
+        android:scaleType="fitCenter"
+        android:src="@drawable/set_3"/>
+
+    <ImageButton
+        android:id="@+id/button4"
+        android:layout_marginLeft="10dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Sweeper"
+        android:scaleType="fitCenter"
+        android:src="@drawable/set_4" />
+
+</LinearLayout>

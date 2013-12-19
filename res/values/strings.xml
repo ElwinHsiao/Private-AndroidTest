@@ -5,4 +5,71 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    
+    <string name="hint">Please input a city in English</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">ERROR</string>
+    <string name="units_c">℃</string>
+    <string name="units_f">℉</string>
+    <string name="add_city">Please add a city</string>
+    <string name="input_error">Sorry!Input error, please re-enter!</string>
+    <string name="select_city">Please select a city:</string>
+    
+    <string name="menu_title">Set boot item :</string>
+    
+    <string name="weather_wait">Getting weather ...</string>
+    <string name="weather_fail">Fail to get weather!</string>
+    <string name="hint_error">Input error,try again!</string>
+    <string name="between_time">:</string>
+    
+    <string name="str_country">中国</string>
+    <string name="str_province">省</string>
+    <string name="str_city">市</string>
+    <string name="str_area">区</string>
+    <string name="str_come_from">自</string>
+    <string name="str_tem">℃</string>
+    <string name="str_dunhao">转</string>
+    <string name="str_cloudy">多云</string>
+    <string name="str_sunny">晴</string>
+    <string name="str_shade">阴</string>
+    <string name="str_smoke">浮尘</string>
+    <string name="str_h_sand_storm">强沙尘暴</string>
+    <string name="str_sand_storm">沙尘暴</string>
+    <string name="str_fog">雾</string>
+    <string name="str_sand_blowing">扬沙</string>
+    <string name="str_s_snow">小雪</string>
+    <string name="str_m_snow">中雪</string>
+    <string name="str_l_snow">大雪</string>
+    <string name="str_h_snow">暴雪</string>
+    <string name="str_snow_shower">阵雪</string>
+    <string name="str_s_rain">小雨</string>
+    <string name="str_m_rain">中雨</string>
+    <string name="str_l_rain">大雨</string>
+    <string name="str_h_rain">暴雨</string>
+    <string name="str_hh_rain">大暴雨</string>
+    <string name="str_hhh_rain">特大暴雨</string>
+    <string name="str_shower">阵雨</string>
+    <string name="str_thunder_shower">雷阵雨</string>
+    <string name="str_sat">Satellite</string>
+    <string name="str_iptv">IPTV</string>
+    <string name="str_myapp">MyApp</string>
+    <string name="str_filemgr">LocalFiles</string>
+    <string name="str_netbrowser">NetBrowser</string>
+    <string name="str_videosearch">VideoSearch</string>
+    <string name="str_market">AppDownload</string>
+    <string name="str_setting">Settings</string>
+    <string name="str_tvonline">TvOnline</string>
+    <string name="str_netvideos">NetVideos</string>
+    <string name="str_game">Game</string>
+    <string name="str_amzingonline">Amazing Online</string>
+    <string name="str_livetvzone">LiveTv Zone</string>
+
+    <string-array name="dialog_text">
+        <item>Welcome!</item>
+        <item>Every day is a new beginning!</item>
+        <item>Tomorrow will be a good day!!</item>
+        <item>Click me for help!!</item>
+        <item>Press menu and set start app!</item>
+    </string-array>
 </resources>

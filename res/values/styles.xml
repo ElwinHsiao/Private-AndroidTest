@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -15,6 +15,39 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <style name="openInLineAnimate" parent="android:Animation">          
+        <item name="@android:windowEnterAnimation">@anim/open_from_line</item>  //进入时的动画   
+        <item name="@android:windowExitAnimation">@anim/close_to_line</item>    //退出时的动画   
+    </style>  
+    
+    <style name="fadeAnimate" parent="android:Animation">          
+        <item name="@android:windowEnterAnimation">@anim/fadein</item>  //进入时的动画   
+        <item name="@android:windowExitAnimation">@anim/fadeout</item>    //退出时的动画   
+    </style>  
+    
+    <style name="openInLineDialogTitle">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+    
+    <style name="openInLineDialogTheme" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <!-- <item name="android:windowFullscreen">true</item> -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/holo_blue_light</item>
+        <item name="android:windowAnimationStyle">@style/openInLineAnimate</item>
+        <item name="android:windowTitleSize">50dp</item>
+        <item name="android:windowTitleStyle">@style/openInLineDialogTitle</item>
+        
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+    
+    <style name="weatherSettingTheme" parent="@style/openInLineDialogTheme">
+        <item name="android:windowAnimationStyle">@style/fadeAnimate</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
 </resources>

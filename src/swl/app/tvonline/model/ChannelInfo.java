@@ -1,0 +1,33 @@
+package swl.app.tvonline.model;
+
+public class ChannelInfo {
+	private int id;
+	private String name;
+//	private String shortName;
+	private String programListUrl;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+//	public String getShortName() {
+//		return shortName;
+//	}
+//	public void setShortName(String shortName) {
+//		this.shortName = shortName;
+//	}
+	public String getProgramListUrl() {
+		return programListUrl;
+	}
+	public void setProgramListUrl(String programListUrl) {
+		this.programListUrl = programListUrl;
+	}
+}
